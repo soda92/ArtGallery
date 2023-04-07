@@ -92,9 +92,11 @@ fun ArtPiece(
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
-        Surface(
+        Box(
+            contentAlignment = Alignment.Center,
             modifier = Modifier
                 .wrapContentWidth()
+                .padding(16.dp)
                 .fillMaxHeight(0.8F)
                 .align(Alignment.CenterHorizontally)
         ) {
@@ -102,7 +104,6 @@ fun ArtPiece(
                 painter = painterResource(id = artData.image),
                 contentDescription = artData.toString(),
                 modifier = Modifier
-                    .padding(16.dp)
                     .border(width = 3.dp, color = Color.DarkGray)
                     .shadow(elevation = 16.dp, shape = RectangleShape)
             )
@@ -124,7 +125,7 @@ fun ArtPiece(
                 textAlign = TextAlign.Justify
             )
         }
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(8.dp))
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
